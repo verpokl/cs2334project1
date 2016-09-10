@@ -1,3 +1,5 @@
+package src;
+
 /**
  * 
  * @author CS2334.  Modified by: ?????
@@ -22,8 +24,6 @@ public class Sample {
 	/** Indicates whether the observation is a valid one */
 	private boolean valid;
 	
-	// TODO: complete the implementation
-	
 	/**
 	 * Creates an invalid sample
 	 */
@@ -38,7 +38,15 @@ public class Sample {
 	 */
 	public Sample(double in)
 	{
-	    
+	    if(in > -900)
+	    {
+	        this.value = in;
+	        this.valid = true;
+	    }
+	    else
+	    {
+            this.valid = false;  
+	    }
 	}
 	
 	/**
@@ -49,11 +57,11 @@ public class Sample {
 	{
 	   if (this.isValid())
 	   {
-	       return String.format("%.4d", this.getValue());
+	       return String.format("%.4f", this.getValue());
 	   } 
 	   else
 	   {
-	       return "invalid\n";
+	       return "invalid";
 	   }
 	}
 
