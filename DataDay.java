@@ -1,6 +1,6 @@
 /**
  * 
- * @author CS2334.  Modified by: ?????
+ * @author CS2334.  Modified by: pvelesko
  * <P>
  * Date: 2015-09-10 <BR>
  * Project 1
@@ -16,8 +16,16 @@ public class DataDay {
     private int month;
     /** The day on which the data were sampled (1=January, 2=February, etc */
     private int day;
-    
-    // TODO: Fill in remaining components
+    /** Unique ID of the station */
+    private String stationID;
+    /** Maximum speed of wind for the day */
+    private Sample windMax;
+    /** Minimum speed of wind for the day */
+    private Sample windMin;
+    /** Average speed of wind for the day */
+    private Sample windAverage;
+    /** Amount of solar radiation for the day */
+    private Sample solarRadiation;
 
     /**
      * DataDay constructor
@@ -34,21 +42,99 @@ public class DataDay {
     public DataDay(int year, int month, int day, String stationID,
             Sample solarRadiation, Sample windSpeedMin, 
             Sample windSpeedAverage, Sample windSpeedMax) {
+        //set all the fields
+        this.year = year;
+        this.month = month;
+        this.day = day;
+        this.stationID = stationID;
+        this.solarRadiation = solarRadiation;
+        this.windMin = windSpeedMin;
+        this.windMax = windSpeedMax;
+        this.windAverage = windSpeedAverage;
         
-        // TODO: complete implementation
     }
-
-    // TODO: supply the getters
-    
 
     /**
      * Describe the data for the day
      * 
      * @return String describing the day
      */
-    public String toString(){
-        // TODO: complete the implementation
-
+    public String toString()
+    {
+        String out = "";
+        out += "%4d-%02d-%02d, "; //for the date
+        out += "%s: "; //ID
+        out += "Wind = [%.04f, %.04f, %.04f], "; //wind
+        out += "Solar Radiation = %.4f"; // radiation
+        return String.format(out, 
+                this.getYear(), 
+                this.getMonth(),
+                this.getDay(),
+                
+                this.getStationID(), 
+                
+                this.getWindMin().getValue(), 
+                this.getWindAverage().getValue(), 
+                this.getWindMax().getValue(), 
+                
+                this.getSolarRadiation().getValue());
     }
+
+    /**
+     * @return the year
+     */
+    public int getYear() {
+        return year;
+    }
+
+    /**
+     * @return the month
+     */
+    public int getMonth() {
+        return month;
+    }
+
+    /**
+     * @return the day
+     */
+    public int getDay() {
+        return day;
+    }
+
+    /**
+     * @return the stationID
+     */
+    public String getStationID() {
+        return stationID;
+    }
+
+    /**
+     * @return the windMax
+     */
+    public Sample getWindMax() {
+        return windMax;
+    }
+
+    /**
+     * @return the windMin
+     */
+    public Sample getWindMin() {
+        return windMin;
+    }
+
+    /**
+     * @return the windAverage
+     */
+    public Sample getWindAverage() {
+        return windAverage;
+    }
+
+    /**
+     * @return the solarRadiation
+     */
+    public Sample getSolarRadiation() {
+        return solarRadiation;
+    }
+    
     
 }
