@@ -19,11 +19,11 @@ public class DataDay {
     /** Unique ID of the station */
     private String stationID;
     /** Maximum speed of wind for the day */
-    private Sample windMax;
+    private Sample windSpeedMax;
     /** Minimum speed of wind for the day */
-    private Sample windMin;
+    private Sample windSpeedMin;
     /** Average speed of wind for the day */
-    private Sample windAverage;
+    private Sample windSpeedAverage;
     /** Amount of solar radiation for the day */
     private Sample solarRadiation;
 
@@ -48,9 +48,9 @@ public class DataDay {
         this.day = day;
         this.stationID = stationID;
         this.solarRadiation = solarRadiation;
-        this.windMin = windSpeedMin;
-        this.windMax = windSpeedMax;
-        this.windAverage = windSpeedAverage;
+        this.windSpeedMin = windSpeedMin;
+        this.windSpeedMax = windSpeedMax;
+        this.windSpeedAverage = windSpeedAverage;
         
     }
 
@@ -73,9 +73,9 @@ public class DataDay {
                 
                 this.getStationID(), 
                 
-                this.getWindMin().getValue(), 
-                this.getWindAverage().getValue(), 
-                this.getWindMax().getValue(), 
+                this.getWindSpeedMin().getValue(), 
+                this.getWindSpeedAverage().getValue(), 
+                this.getWindSpeedMax().getValue(), 
                 
                 this.getSolarRadiation().getValue());
     }
@@ -111,22 +111,22 @@ public class DataDay {
     /**
      * @return the windMax
      */
-    public Sample getWindMax() {
-        return windMax;
+    public Sample getWindSpeedMax() {
+        return windSpeedMax;
     }
 
     /**
      * @return the windMin
      */
-    public Sample getWindMin() {
-        return windMin;
+    public Sample getWindSpeedMin() {
+        return windSpeedMin;
     }
 
     /**
      * @return the windAverage
      */
-    public Sample getWindAverage() {
-        return windAverage;
+    public Sample getWindSpeedAverage() {
+        return windSpeedAverage;
     }
 
     /**
