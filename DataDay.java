@@ -5,11 +5,17 @@
  * Date: 2015-09-10 <BR>
  * Project 1
  * <P>
- * This class represents a summary of one day's data from a single Mesonet station.
+ * This class represents a summary of one day's data 
+ * from a single Mesonet station.
  *
  */
 
-public class DataDay {
+/**
+ * sotres one day
+ * @author pvelesko
+ * @version 1.0
+ */
+public class DataDay extends StatisticsAbstract {
     /** Year in which the data were sampled */
     private int year;
     /** Month in which the data were sampled */
@@ -27,6 +33,17 @@ public class DataDay {
     /** Amount of solar radiation for the day */
     private Sample solarRadiation;
 
+    /**
+     * Constructor to create an uninitialized DataDay
+     */
+    public DataDay()
+    {
+        //set up invalid samples
+        this.solarRadiation = new Sample();
+        this.windSpeedMin = new Sample();
+        this.windSpeedMax = new Sample();
+        this.windSpeedAverage = new Sample();
+    }
     /**
      * DataDay constructor
      * 
@@ -134,6 +151,42 @@ public class DataDay {
      */
     public Sample getSolarRadiation() {
         return solarRadiation;
+    }
+
+    @Override
+    public DataDay getWindSpeedMinDay() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public DataDay getWindSpeedMaxDay() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Sample getWindSpeedAvgDay() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public DataDay getSolarRadiationMinDay() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public DataDay getSolarRadiationMaxDay() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Sample getSolarRadiationAvgDay() {
+        // TODO Auto-generated method stub
+        return null;
     }
     
     
