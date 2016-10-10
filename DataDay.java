@@ -1,6 +1,6 @@
 /**
  * 
- * @author CS2334.  Modified by: pvelesko
+ * @author CS2334.  Modified by: pvelesko, Edgar
  * <P>
  * Date: 2015-09-10 <BR>
  * Project 1
@@ -155,38 +155,32 @@ public class DataDay extends StatisticsAbstract {
 
     @Override
     public DataDay getWindSpeedMinDay() {
-        // TODO Auto-generated method stub
-        return null;
+        return this;
     }
 
     @Override
     public DataDay getWindSpeedMaxDay() {
-        // TODO Auto-generated method stub
-        return null;
+        return this;
     }
 
     @Override
     public Sample getWindSpeedAvgDay() {
-        // TODO Auto-generated method stub
-        return null;
+        return this.windSpeedAverage;
     }
 
     @Override
     public DataDay getSolarRadiationMinDay() {
-        // TODO Auto-generated method stub
-        return null;
+        return this;
     }
 
     @Override
     public DataDay getSolarRadiationMaxDay() {
-        // TODO Auto-generated method stub
-        return null;
+        return this;
     }
 
     @Override
     public Sample getSolarRadiationAvgDay() {
-        // TODO Auto-generated method stub
-        return null;
+        return solarRadiation;
     }
     
     
